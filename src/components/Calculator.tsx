@@ -2,9 +2,9 @@
 
 import { useMemo, useState } from "react";
 import jsPDF from "jspdf";
-import ccb from "../data/ccb.json";
+import ccbJson from "../data/ccb.json";
 
-// ---- Types (minimal) ----
+// ---- Types ----
 type Option = { optionText: string; optionValue: string; optionHint?: string };
 type Field = {
   _id: number;
@@ -18,19 +18,31 @@ type CalculatorData = {
   ccb_name: string;
   ccb_fields: Field[];
 };
+type CcbRoot = { calculators?: CalculatorData[] };
 
-const calculator = ((ccb as any).calculators?.[0] || {}) as CalculatorData;
+// ---- Data (typed, no `any`) ----
+const ccbRoot = ccbJson as unknown as CcbRoot;
+const calculator: CalculatorData | null = ccbRoot.calculators?.[0] ?? null;
 
 // ---- Helpers ----
-const toNum = (v?: string | number) => (typeof v === "number" ? v : Number(v || 0)) || 0;
+const toNum = (v?: string | number) =>
+  (typeof v === "number" ? v : Number(v || 0)) || 0;
+
 const formatUSD = (n: number) =>
-  `$${n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  `$${n.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
 
 // ---- Component ----
 export default function Calculator() {
   // Dropdown: store both numeric value and selected label so we can print it on the PDF
-  const [dropdownValues, setDropdownValues] = useState<Record<string, number>>({});
-  const [dropdownLabels, setDropdownLabels] = useState<Record<string, string>>({});
+  const [dropdownValues, setDropdownValues] = useState<Record<string, number>>(
+    {}
+  );
+  const [dropdownLabels, setDropdownLabels] = useState<Record<string, string>>(
+    {}
+  );
 
   // Toggles/Checkboxes: `${alias}:${optionText}` => boolean
   const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -40,7 +52,7 @@ export default function Calculator() {
     let sum = 0;
     Object.values(dropdownValues).forEach((v) => (sum += v || 0));
 
-    calculator.ccb_fields?.forEach((f) => {
+    calculator?.ccb_fields?.forEach((f: Field) => {
       if ((f.type === "Toggle" || f.type === "Checkbox") && f.options) {
         f.options.forEach((o) => {
           const key = `${f.alias}:${o.optionText}`;
@@ -53,11 +65,15 @@ export default function Calculator() {
   }, [dropdownValues, checked]);
 
   // Build an itemized array of selections for the PDF
-  function buildSelections(): Array<{ section: string; item: string; price: number }> {
+  function buildSelections(): Array<{
+    section: string;
+    item: string;
+    price: number;
+  }> {
     const rows: Array<{ section: string; item: string; price: number }> = [];
 
     // Dropdown selections
-    calculator.ccb_fields?.forEach((f) => {
+    calculator?.ccb_fields?.forEach((f: Field) => {
       if (f.type === "Drop Down") {
         const alias = f.alias || `drop_${f._id}`;
         const value = dropdownValues[alias];
@@ -69,12 +85,16 @@ export default function Calculator() {
     });
 
     // Toggle/Checkbox selections
-    calculator.ccb_fields?.forEach((f) => {
+    calculator?.ccb_fields?.forEach((f: Field) => {
       if ((f.type === "Toggle" || f.type === "Checkbox") && f.options) {
         f.options.forEach((o) => {
           const key = `${f.alias}:${o.optionText}`;
           if (checked[key]) {
-            rows.push({ section: f.label, item: o.optionText, price: toNum(o.optionValue) });
+            rows.push({
+              section: f.label,
+              item: o.optionText,
+              price: toNum(o.optionValue),
+            });
           }
         });
       }
@@ -88,7 +108,8 @@ export default function Calculator() {
     const rows = buildSelections();
 
     // Guard: nothing selected
-    const somethingSelected = rows.length > 0 || Object.values(dropdownValues).some((v) => v > 0);
+    const somethingSelected =
+      rows.length > 0 || Object.values(dropdownValues).some((v) => v > 0);
     if (!somethingSelected) {
       alert("Please make some selections before submitting.");
       return;
@@ -103,7 +124,7 @@ export default function Calculator() {
     let y = margin;
     doc.setFont("helvetica", "bold");
     doc.setFontSize(18);
-    doc.text(calculator.ccb_name || "Quote", margin, y);
+    doc.text(calculator?.ccb_name || "Quote", margin, y);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     const date = new Date().toLocaleString();
@@ -187,11 +208,13 @@ export default function Calculator() {
     doc.save(filename);
   }
 
-  if (!calculator?.ccb_fields) {
+  if (!calculator || !calculator.ccb_fields) {
     return (
       <div className="p-8">
         <h1 className="text-2xl font-semibold">No calculator found</h1>
-        <p className="text-neutral-600">Make sure src/data/ccb.json exists and is valid JSON.</p>
+        <p className="text-neutral-600">
+          Make sure <code>src/data/ccb.json</code> exists and is valid JSON.
+        </p>
       </div>
     );
   }
@@ -199,14 +222,14 @@ export default function Calculator() {
   return (
     <div className="mx-auto max-w-5xl p-6 space-y-6">
       <header className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">{calculator.ccb_name || "Calculator"}</h1>
-        <div className="text-xl font-bold">
-          Total: {formatUSD(total)}
-        </div>
+        <h1 className="text-2xl font-semibold">
+          {calculator.ccb_name || "Calculator"}
+        </h1>
+        <div className="text-xl font-bold">Total: {formatUSD(total)}</div>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {calculator.ccb_fields.map((f) => {
+        {calculator.ccb_fields.map((f: Field) => {
           if (f.type === "Line") {
             return (
               <div key={f._id} className="md:col-span-2">
@@ -226,8 +249,9 @@ export default function Calculator() {
                   onChange={(e) => {
                     const val = Number(e.target.value || 0);
                     const text =
-                      f.options?.find((o) => String(o.optionValue) === e.target.value)
-                        ?.optionText || "";
+                      f.options?.find(
+                        (o) => String(o.optionValue) === e.target.value
+                      )?.optionText || "";
                     setDropdownValues((s) => ({ ...s, [alias]: val }));
                     setDropdownLabels((s) => ({ ...s, [alias]: text }));
                   }}
@@ -261,7 +285,10 @@ export default function Calculator() {
                           className="h-4 w-4"
                           checked={isChecked}
                           onChange={(e) =>
-                            setChecked((s) => ({ ...s, [key]: e.target.checked }))
+                            setChecked((s) => ({
+                              ...s,
+                              [key]: e.target.checked,
+                            }))
                           }
                         />
                         <span className="text-sm">
@@ -293,9 +320,7 @@ export default function Calculator() {
           >
             Submit &amp; Download PDF
           </button>
-          <div className="text-xl font-bold">
-            Total: {formatUSD(total)}
-          </div>
+          <div className="text-xl font-bold">Total: {formatUSD(total)}</div>
         </div>
       </footer>
     </div>
