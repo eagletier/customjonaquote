@@ -1,0 +1,963 @@
+{
+  "calculators": [
+    {
+      "ccb_name": "JO-NA App Build Custom Pricing",
+      "ccb_fields": [
+        {
+          "label": "Starting Package(s)",
+          "_id": 0,
+          "default": "",
+          "description": "The Starting Package section is total that accumulation of the Each Starting Packages Contents. (In the event that you do not want an item in the Package, Select The Items That You Do Desire & Unselect The Items You Do Not)",
+          "required": false,
+          "_event": "change",
+          "type": "Drop Down",
+          "allowRound": "",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "allowCurrency": "",
+          "calculateHidden": false,
+          "hasNextTick": true,
+          "nextTickCount": 0,
+          "disableOptions": [],
+          "fieldCurrency": true,
+          "seperateCurrency": false,
+          "addToSummary": true,
+          "_tag": "cost-drop-down",
+          "icon": "ccb-icon-dropdown-2",
+          "alias": "dropDown_field_id_0",
+          "desc_option": "after",
+          "summary_view": "show_label_calculable",
+          "fieldCurrencySettings": {
+            "currency": "$",
+            "num_after_integer": 2,
+            "decimal_separator": ".",
+            "thousands_separator": ",",
+            "currencyPosition": "left_with_space"
+          },
+          "options": [
+            {
+              "optionText": "Pilot MVP",
+              "optionValue": "28000"
+            },
+            {
+              "optionText": "Brownfield Approach",
+              "optionValue": "41500"
+            },
+            {
+              "optionText": "Brownfield +",
+              "optionValue": "60500"
+            }
+          ],
+          "show_value_in_option": true,
+          "text": "Dropdown list"
+        },
+        {
+          "label": "Line (7) (copy 1)",
+          "_event": "",
+          "_id": 8,
+          "len": "50%",
+          "size": "4px",
+          "type": "Line",
+          "style": "solid",
+          "description": "",
+          "placeholder": "",
+          "_tag": "cost-line",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "icon": "ccb-icon-Path-3518",
+          "alias": "line_field_id_8",
+          "text": "Divider",
+          "idx": 7,
+          "stm_dublicate_field_id": 7
+        },
+        {
+          "_id": 2,
+          "label": "Starting Package #1: Pilot MVP",
+          "default": "",
+          "type": "Toggle",
+          "description": "Baseline To Run JO-NA Daily Operations",
+          "required": false,
+          "_event": "change",
+          "allowRound": "",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "addToSummary": true,
+          "allowCurrency": "",
+          "calculateHidden": false,
+          "fieldCurrency": false,
+          "checkedLength": 0,
+          "hasNextTick": true,
+          "nextTickCount": 0,
+          "disableOptions": [],
+          "_tag": "cost-toggle",
+          "icon": "ccb-icon-Path-3515",
+          "alias": "toggle_field_id_2",
+          "desc_option": "after",
+          "summary_view": "show_value",
+          "fieldCurrencySettings": {
+            "currency": "$",
+            "num_after_integer": 2,
+            "decimal_separator": ".",
+            "thousands_separator": ",",
+            "currencyPosition": "left_with_space"
+          },
+          "styles": {
+            "box_style": "vertical",
+            "style": "default"
+          },
+          "options": [
+            {
+              "optionText": "Role Based Access",
+              "optionValue": "2500",
+              "optionHint": "This is where we can makes sure each admin has controls over who can view what or take action on what."
+            },
+            {
+              "optionText": "Dashboard V1",
+              "optionValue": "2000",
+              "optionHint": "Basic Job status Tabs, Sortable/Filterable/Searchable/ X # in View"
+            },
+            {
+              "optionText": "Proper QA ",
+              "optionValue": "2000",
+              "optionHint": "Baseline QA Passing Before Advancing to New Feature/Components"
+            },
+            {
+              "optionText": "Testing & Monitoring",
+              "optionValue": "2000",
+              "optionHint": "Software integration and deployment for the monitoring of application problems, crash set ups, and reporting before issues occur"
+            },
+            {
+              "optionText": "Enhanced UI/UX",
+              "optionValue": "2000",
+              "optionHint": "Building an easily navigation pathway for the proper workflows necessary for the user type (Admin, Contractor)"
+            },
+            {
+              "optionText": "Forms V1",
+              "optionValue": "2000",
+              "optionHint": "Sortable/Filterable/Searchable"
+            },
+            {
+              "optionText": "Vehicle Maintenance Reports V1",
+              "optionValue": "2000",
+              "optionHint": "Establishes all normal vehicle reporting capabilities."
+            },
+            {
+              "optionText": "PDF Optimization V1",
+              "optionValue": "3000",
+              "optionHint": "Auto Compression, SOP Layout Enforcement to reduce page length and report size"
+            },
+            {
+              "optionText": "Jobs Module",
+              "optionValue": "4000",
+              "optionHint": "List Tasks, Assignments, Offline Sync, Tech Used"
+            },
+            {
+              "optionText": "Site Module V1",
+              "optionValue": "3000",
+              "optionHint": "Site Info for former forms, tasks per site, tech used"
+            },
+            {
+              "optionText": "Offline-First Foundation",
+              "optionValue": "3500",
+              "optionHint": "SQLite Caching, sync queued"
+            }
+          ],
+          "apply_style_for_all": false,
+          "text": "Switch toggle",
+          "idx": 2
+        },
+        {
+          "label": "Line (5)",
+          "_event": "",
+          "_id": 5,
+          "len": "50%",
+          "size": "2px",
+          "type": "Line",
+          "style": "solid",
+          "description": "",
+          "placeholder": "",
+          "_tag": "cost-line",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "icon": "ccb-icon-Path-3518",
+          "alias": "line_field_id_5",
+          "text": "Divider"
+        },
+        {
+          "_id": 3,
+          "label": "Starting Package #2: Brownfield Approach",
+          "default": "",
+          "type": "Toggle",
+          "description": "Pilot MVP Components + Version 2 Upgrades",
+          "required": false,
+          "_event": "change",
+          "allowRound": "",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "addToSummary": true,
+          "allowCurrency": "",
+          "calculateHidden": false,
+          "fieldCurrency": false,
+          "checkedLength": 0,
+          "hasNextTick": true,
+          "nextTickCount": 0,
+          "disableOptions": [],
+          "_tag": "cost-toggle",
+          "icon": "ccb-icon-Path-3515",
+          "alias": "toggle_field_id_3",
+          "desc_option": "after",
+          "summary_view": "show_value",
+          "fieldCurrencySettings": {
+            "currency": "$",
+            "num_after_integer": 2,
+            "decimal_separator": ".",
+            "thousands_separator": ",",
+            "currencyPosition": "left_with_space"
+          },
+          "styles": {
+            "box_style": "vertical",
+            "style": "default"
+          },
+          "options": [
+            {
+              "optionText": "PILOT MVP",
+              "optionValue": "28000",
+              "optionHint": "This is comprised of all of the aspects included in the Pilot MVP build"
+            },
+            {
+              "optionText": "PDF V2",
+              "optionValue": "3000",
+              "optionHint": "Edit app + Download"
+            },
+            {
+              "optionText": "Reporting Analysis V2",
+              "optionValue": "2500",
+              "optionHint": "Filtered Dropdown Statistics"
+            },
+            {
+              "optionText": "Dashboard V2",
+              "optionValue": "2500",
+              "optionHint": "Manage View of 2 Main Workflows For Ease of Access"
+            },
+            {
+              "optionText": "Forms V2",
+              "optionValue": "3000",
+              "optionHint": "Form Template Creation with refined Pagination"
+            },
+            {
+              "optionText": "Customer Project Management V1",
+              "optionValue": "2500",
+              "optionHint": "Able To View Project Management Portfolio of Customer Towers, Services Provided, Total Billing"
+            }
+          ],
+          "apply_style_for_all": false,
+          "text": "Switch toggle",
+          "idx": 3,
+          "stm_dublicate_field_id": 2
+        },
+        {
+          "label": "Line (6)",
+          "_event": "",
+          "_id": 6,
+          "len": "50%",
+          "size": "2px",
+          "type": "Line",
+          "style": "solid",
+          "description": "",
+          "placeholder": "",
+          "_tag": "cost-line",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "icon": "ccb-icon-Path-3518",
+          "alias": "line_field_id_6",
+          "text": "Divider"
+        },
+        {
+          "_id": 4,
+          "label": "Starting Package #3: Brownfield Plus",
+          "default": "",
+          "type": "Toggle",
+          "description": "Brownfield Approach + Added Advanced Mobile Editing + Assistant Features",
+          "required": false,
+          "_event": "change",
+          "allowRound": "",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "addToSummary": true,
+          "allowCurrency": "",
+          "calculateHidden": false,
+          "fieldCurrency": false,
+          "checkedLength": 0,
+          "hasNextTick": true,
+          "nextTickCount": 0,
+          "disableOptions": [],
+          "_tag": "cost-toggle",
+          "icon": "ccb-icon-Path-3515",
+          "alias": "toggle_field_id_4",
+          "desc_option": "after",
+          "summary_view": "show_value",
+          "fieldCurrencySettings": {
+            "currency": "$",
+            "num_after_integer": 2,
+            "decimal_separator": ".",
+            "thousands_separator": ",",
+            "currencyPosition": "left_with_space"
+          },
+          "styles": {
+            "box_style": "vertical",
+            "style": "default"
+          },
+          "options": [
+            {
+              "optionText": "Both Starter Packages",
+              "optionValue": "41500",
+              "optionHint": "This is comprised of all of the aspects included in the Pilot MVP + Brownfield Approach"
+            },
+            {
+              "optionText": "PDF V3",
+              "optionValue": "4500",
+              "optionHint": "Proper In App Editing + Drag & Drop Report Building For Proper Pagination + Photo Watermarking + Form Template Saving/Easily Accessible Pathways"
+            },
+            {
+              "optionText": "Reporting Analysis V3",
+              "optionValue": "3000",
+              "optionHint": "Statistics with Weekly/Monthly/Quarterly/Annual Viewing For Sites, Customers, Tasks, Jobs, Payroll, Contractors"
+            },
+            {
+              "optionText": "Dashboard V3",
+              "optionValue": "3000",
+              "optionHint": "Manage View of 2 Main Workflows For Ease of Access of any feature in the application to custom set \"Home View\""
+            },
+            {
+              "optionText": "User Assistance",
+              "optionValue": "3000",
+              "optionHint": "How To Properly Go Through Each Feature Step by Step In-App Tutorials"
+            },
+            {
+              "optionText": "Quoting Capabilities",
+              "optionValue": "2500",
+              "optionHint": "Able to perform quoting for customers based on pricing set up for services, billing, margin strategy, etc"
+            },
+            {
+              "optionText": "Customer View",
+              "optionValue": "3000",
+              "optionHint": "Upgrading Role Based Access Controls To Enhance Customer Access Viewing To Notify Tasks of Completion and Job Quoting and Customer Specific Reporting Analytics regarding sites and jobs data"
+            }
+          ],
+          "apply_style_for_all": false,
+          "text": "Switch toggle",
+          "idx": 3,
+          "stm_dublicate_field_id": 3
+        },
+        {
+          "label": "Line (7)",
+          "_event": "",
+          "_id": 7,
+          "len": "50%",
+          "size": "4px",
+          "type": "Line",
+          "style": "solid",
+          "description": "",
+          "placeholder": "",
+          "_tag": "cost-line",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "icon": "ccb-icon-Path-3518",
+          "alias": "line_field_id_7",
+          "text": "Divider",
+          "idx": 7
+        },
+        {
+          "_id": 1,
+          "label": "Selective Menu Items",
+          "default": "",
+          "description": "This will list all of the elements that are included in the Selected Starting Approach & Selected Components",
+          "required": false,
+          "_event": "change",
+          "type": "Checkbox",
+          "allowRound": "",
+          "additionalCss": "",
+          "additionalStyles": "",
+          "addToSummary": true,
+          "allowCurrency": true,
+          "hasNextTick": true,
+          "nextTickCount": 0,
+          "disableOptions": [],
+          "calculateHidden": false,
+          "fieldCurrency": false,
+          "checkedLength": 0,
+          "minChecked": 0,
+          "_tag": "cost-checkbox",
+          "icon": "ccb-icon-Path-3512",
+          "alias": "checkbox_field_id_1",
+          "desc_option": "after",
+          "summary_view": "show_value",
+          "fieldCurrencySettings": {
+            "currency": "$",
+            "num_after_integer": 2,
+            "decimal_separator": ".",
+            "thousands_separator": ",",
+            "currencyPosition": "left_with_space"
+          },
+          "styles": {
+            "box_style": "vertical",
+            "style": "default"
+          },
+          "options": [
+            {
+              "optionText": "Role Based Access",
+              "optionValue": "2500",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Dashboard V1",
+              "optionValue": "2000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Enhanced UI/UX",
+              "optionValue": "2000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Forms V1",
+              "optionValue": "2000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Forms V2",
+              "optionValue": "4000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Vehicle Maintenance Reports V1",
+              "optionValue": "2000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "PDF Optimization",
+              "optionValue": "3000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Jobs Module",
+              "optionValue": "4000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Site Module V1",
+              "optionValue": "3000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Offline-First Foundation",
+              "optionValue": "3500",
+              "optionHint": ""
+            },
+            {
+              "optionText": "PDF V2",
+              "optionValue": "3000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Reporting Analysis V2",
+              "optionValue": "2500",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Dashboard V2",
+              "optionValue": "4500",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Customer Project Management V1",
+              "optionValue": "2500",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Reporting Analysis V3",
+              "optionValue": "3000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "User Assistance",
+              "optionValue": "3000",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Quoting Capabilities",
+              "optionValue": "2500",
+              "optionHint": ""
+            },
+            {
+              "optionText": "Customer Viewing",
+              "optionValue": "3000",
+              "optionHint": ""
+            }
+          ],
+          "apply_style_for_all": false,
+          "text": "Checkbox"
+        }
+      ],
+      "ccb_formula": [
+        {
+          "label": "Total",
+          "formula": "dropDown_field_id_0 + line_field_id_8 + toggle_field_id_2 + line_field_id_5 + toggle_field_id_3 + line_field_id_6 + toggle_field_id_4 + line_field_id_7 + checkbox_field_id_1 ",
+          "symbol": ""
+        }
+      ],
+      "ccb_category": "",
+      "ccb_icon": "",
+      "ccb_type": "",
+      "ccb_link": "",
+      "ccb_info": "",
+      "ccb_description": "",
+      "ccb_conditions": {
+        "nodes": [],
+        "links": []
+      },
+      "ccb_form_settings": {
+        "general": {
+          "tour_title": "Summary block",
+          "tour_description": "Edit the default view of the Total summary.",
+          "header_title": "Total Summary",
+          "descriptions": true,
+          "hide_empty": true,
+          "hide_empty_for_orders_pdf_emails": true,
+          "sticky": false,
+          "show_option_unit": true,
+          "in_pro": false,
+          "icons": "ccb-icon-new-calculator",
+          "slug": "total-summary",
+          "styles": {
+            "radio": "",
+            "checkbox": "",
+            "toggle": "",
+            "radio_with_img": "",
+            "checkbox_with_img": ""
+          },
+          "show_details_accordion": true
+        },
+        "currency": {
+          "tour_title": "Currency",
+          "tour_description": "Set the currency sign and edit its default appearance.",
+          "currency": "$",
+          "num_after_integer": 2,
+          "decimal_separator": ".",
+          "thousands_separator": ",",
+          "currencyPosition": "left_with_space",
+          "in_pro": false,
+          "icons": "ccb-icon-Union-23",
+          "slug": "currency"
+        },
+        "texts": {
+          "tour_title": "Warning texts",
+          "tour_description": "Manage notifications of Calculator forms.",
+          "title": "Your service request has been completed!",
+          "description": "We have sent your request information to your email.",
+          "issued_on": "Issued on",
+          "reset_btn": "Create new calculation",
+          "invoice_btn": "Get invoice",
+          "required_msg": "This field is required",
+          "checkbox_min_required_msg_single": "option is required",
+          "checkbox_min_required_msg_plural": "options are required",
+          "in_pro": false,
+          "icons": "ccb-icon-Path-3601",
+          "slug": "texts",
+          "form_fields": {
+            "email_format": "Invalid email",
+            "email_field": "Email is required",
+            "name_field": "Name is required",
+            "phone_field": "Phone number is required",
+            "terms_and_conditions_field": "Please, check out our terms and click on the checkbox"
+          }
+        },
+        "thankYouPage": {
+          "tour_title": "Confirmation page",
+          "tour_description": "Make a custom thank you page for users after making an order",
+          "slug": "thank-you-page",
+          "enable": true,
+          "type": "same_page",
+          "is_on": true,
+          "page_id": "",
+          "custom_page_link": "",
+          "title": "Thank you for your order!",
+          "description": "We have sent order details to your email.",
+          "order_title": "Order ID",
+          "back_button_text": "Back to calculator",
+          "download_button": false,
+          "download_button_text": "Download PDF",
+          "share_button": false,
+          "share_button_text": "Send PDF to",
+          "custom_button": false,
+          "custom_button_text": "Go to website",
+          "custom_button_link": "https://eagletier.com",
+          "complete_msg": "Your order has been placed",
+          "icons": "ccb-icon-Check-Circle-new",
+          "showOrderId": true
+        },
+        "sticky_calc": {
+          "tour_title": "Sticky calculator",
+          "tour_description": "Add a button that stays on the screen as users scroll",
+          "slug": "sticky-calculator",
+          "enable": "",
+          "display_type": "btn",
+          "btn_position": "bottom_left",
+          "banner_position": "bottom",
+          "hide_icon": false,
+          "title": "calc_title",
+          "description": "Description text",
+          "formulas": [],
+          "pages": [],
+          "btn_text": "Open calculator",
+          "one_click_action": "open_modal",
+          "show_calculator": false,
+          "show_total": true,
+          "custom_text": "",
+          "custom_desc": "",
+          "icons": "ccb-icon-sticky-calc",
+          "classes": "",
+          "is_on": true,
+          "icon": ""
+        },
+        "formFields": {
+          "tour_title": "Order Form",
+          "tour_description": "Choose contact form type and fill out settings.",
+          "fields": [],
+          "formulas": [],
+          "emailSubject": "New Order",
+          "contactFormId": "",
+          "formType": "cost-calculator",
+          "applyFormId": "",
+          "accessEmail": "",
+          "adminEmailAddress": "",
+          "customEmailAddresses": [],
+          "submitBtnText": "Submit order",
+          "openModalBtnText": "Make order",
+          "allowContactForm": "",
+          "order_id_in_subject": false,
+          "body": "Dear sir/madam<br>We would be very grateful to you if you could provide us the quotation of the following=><br><br>Total Summary<br>[ccb-subtotal]<br>Total: [ccb-total-0]<br>Looking forward to hearing back from you.<br>Thanks in advance",
+          "payment": "",
+          "paymentMethod": "",
+          "paymentMethods": [],
+          "in_pro": true,
+          "icons": "ccb-icon-XMLID_426",
+          "slug": "send-form",
+          "terms_and_conditions": {
+            "checkbox": false,
+            "text": "By clicking this box, I agree to your",
+            "page_id": "",
+            "link": "",
+            "link_text": ""
+          },
+          "summary_display": {
+            "enable": false,
+            "form_title": "You will get a quote and invoice after submitting the form",
+            "submit_btn_text": "Get a quote",
+            "action_after_submit": "send_to_email"
+          },
+          "is_on": true,
+          "accessTermsEmail": false
+        },
+        "emailOptions": [],
+        "sendFormRequires": [
+          {
+            "required": false
+          },
+          {
+            "required": false
+          },
+          {
+            "required": false
+          },
+          {
+            "required": false
+          }
+        ],
+        "woo_products": {
+          "tour_title": "Woo Products",
+          "tour_description": "Enables Calculator on the product page.",
+          "enable": "",
+          "category_id": "",
+          "category_ids": [],
+          "product_ids": [],
+          "product_list": [],
+          "by_category": true,
+          "by_product": false,
+          "hook_to_show": "woocommerce_after_single_product_summary",
+          "hide_woo_cart": "",
+          "meta_links": [],
+          "in_pro": true,
+          "icons": "ccb-icon-Union-17",
+          "slug": "woo-products",
+          "is_on": true
+        },
+        "woo_checkout": {
+          "tour_title": "Woo Checkout",
+          "tour_description": "Enables WooCommerce Checkout.",
+          "enable": "",
+          "product_id": "",
+          "redirect_to": "cart",
+          "description": "[ccb-total-0]",
+          "formulas": [],
+          "in_pro": true,
+          "icons": "ccb-icon-Path-3498",
+          "slug": "woo-checkout",
+          "replace_product": true,
+          "change_product_count": false,
+          "stock_links": [],
+          "is_on": true
+        },
+        "payment_gateway": {
+          "slug": "payment-gateway",
+          "icons": "ccb-icon-credit-card",
+          "tour_title": "Payment Gateways",
+          "tour_description": "Set-up your payments.",
+          "in_pro": true,
+          "is_on": true,
+          "cards": {
+            "enable": false,
+            "card_payments": {
+              "stripe": {
+                "enable": false,
+                "secretKey": "",
+                "publishKey": "",
+                "currency": "USD",
+                "mode": "test_mode",
+                "payment_type": "same_page",
+                "logo": "https://eagletier.com/wp-content/plugins/cost-calculator-builder/frontend/dist/img/stripe.svg",
+                "label": "Stripe",
+                "slug": "stripe",
+                "payment_logo_width": "68px"
+              },
+              "razorpay": {
+                "enable": false,
+                "keyId": "",
+                "secretKey": "",
+                "currency": "USD",
+                "payment_type": "same_page",
+                "logo": "https://eagletier.com/wp-content/plugins/cost-calculator-builder/frontend/dist/img/razorpay.png",
+                "label": "Razorpay",
+                "slug": "razorpay",
+                "payment_logo_width": "88px"
+              }
+            }
+          },
+          "paypal": {
+            "enable": false,
+            "integration_type": "legacy",
+            "paypal_email": "",
+            "currency_code": "USD",
+            "paypal_mode": "sandbox",
+            "client_id": "",
+            "client_secret": ""
+          },
+          "cash_payment": {
+            "enable": false,
+            "label": "Cash Payment",
+            "type": ""
+          },
+          "formulas": []
+        },
+        "webhooks": {
+          "tour_title": "Webhooks",
+          "tour_description": "Enables custom webhooks for different events.",
+          "enableSendForms": false,
+          "enablePaymentBtn": false,
+          "enableEmailQuote": false,
+          "send_form_url": "",
+          "payment_btn_url": "",
+          "email_quote_url": "",
+          "secret_key_send_form": "",
+          "secret_key_payment_btn": "",
+          "secret_key_email_quote": "",
+          "in_pro": true,
+          "is_on": true,
+          "icons": "ccb-icon-Webhooks",
+          "slug": "webhooks"
+        },
+        "recaptcha": {
+          "enable": "",
+          "type": "v2",
+          "v2": {
+            "siteKey": "",
+            "secretKey": ""
+          },
+          "v3": {
+            "siteKey": "",
+            "secretKey": ""
+          },
+          "options": {
+            "v2": "Google reCAPTCHA v2",
+            "v3": "Google reCAPTCHA v3"
+          },
+          "use_in_all": false
+        },
+        "notice": {
+          "requiredField": "This field is required"
+        },
+        "page_break": {
+          "total_in_page": false,
+          "summary_after_last_page": false,
+          "pagination_type": "circle_with_line",
+          "hide_pagination_title": false,
+          "formulas": [],
+          "has_page": false
+        },
+        "icon": "fas fa-cogs",
+        "type": "Cost Calculator Settings",
+        "recaptcha_type": {
+          "v2": "Google reCAPTCHA v2",
+          "v3": "Google reCAPTCHA v3"
+        },
+        "recaptcha_v3": {
+          "siteKey": "",
+          "secretKey": ""
+        },
+        "calc_id": 1250
+      },
+      "ccb_discounts": [],
+      "ccb_form_fields": {
+        "form_data": [],
+        "form_fields": []
+      },
+      "ccb_preset": {
+        "title": "Saved 1",
+        "key": "saved_1",
+        "image": {
+          "vertical": "https://eagletier.com/wp-content/plugins/cost-calculator-builder/frontend/dist/img/appearance/theme-saved.png",
+          "horizontal": "https://eagletier.com/wp-content/plugins/cost-calculator-builder/frontend/dist/img/appearance/theme-saved-horizontal.png",
+          "two_column": "https://eagletier.com/wp-content/plugins/cost-calculator-builder/frontend/dist/img/appearance/theme-saved-two-columns.png"
+        },
+        "data": {
+          "desktop": {
+            "colors": {
+              "container": {
+                "color": "#ffffff",
+                "blur": "0",
+                "opacity": "100"
+              },
+              "primary_color": "#001931",
+              "accent_color": "#C39F65",
+              "secondary_color": "#F7F7F7",
+              "error_color": "#D94141",
+              "svg_color": true
+            },
+            "layout": {
+              "box_style": "two_column"
+            },
+            "typography": {
+              "header_font_size": 18,
+              "header_font_weight": "600",
+              "summary_header_size": 14,
+              "summary_header_font_weight": "600",
+              "label_font_size": 14,
+              "label_font_weight": "600",
+              "description_font_size": 14,
+              "description_font_weight": "500",
+              "total_field_font_size": 14,
+              "total_text_transform": "capitalize",
+              "total_field_font_weight": "400",
+              "total_font_size": 18,
+              "total_font_weight": "600",
+              "fields_btn_font_size": 14,
+              "fields_btn_font_weight": "500"
+            },
+            "borders": {
+              "container_border": {
+                "type": "solid",
+                "width": 1,
+                "radius": 8
+              },
+              "fields_border": {
+                "type": "solid",
+                "width": 1,
+                "radius": 4
+              },
+              "button_border": {
+                "type": "solid",
+                "width": 1,
+                "radius": 4
+              }
+            },
+            "shadows": {
+              "container_shadow": {
+                "color": "#cccccc",
+                "blur": 0,
+                "x": 0,
+                "y": 0
+              }
+            },
+            "elements_sizes": {
+              "field_and_buttons_height": 40,
+              "container_vertical_max_width": 970,
+              "container_horizontal_max_width": 970,
+              "container_two_column_max_width": 1200
+            },
+            "spacing_and_positions": {
+              "field_side_indents": 12,
+              "field_spacing": 20,
+              "container_margin": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "container_padding": [
+                20,
+                20,
+                20,
+                20
+              ],
+              "description_position": "after"
+            },
+            "others": {
+              "calc_preloader": 2
+            }
+          },
+          "mobile": {
+            "typography": {
+              "header_font_size": 16,
+              "header_font_weight": "600",
+              "summary_header_size": 12,
+              "summary_header_font_weight": "600",
+              "label_font_size": 12,
+              "label_font_weight": "600",
+              "description_font_size": 12,
+              "description_font_weight": "500",
+              "total_field_font_size": 12,
+              "total_text_transform": "capitalize",
+              "total_field_font_weight": "400",
+              "total_font_size": 16,
+              "total_font_weight": "600",
+              "fields_btn_font_size": 12,
+              "fields_btn_font_weight": "500"
+            },
+            "elements_sizes": {
+              "field_and_buttons_height": 40
+            },
+            "spacing_and_positions": {
+              "field_side_indents": 12,
+              "field_spacing": 20,
+              "container_margin": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "container_padding": [
+                10,
+                10,
+                10,
+                10
+              ]
+            }
+          }
+        }
+      },
+      "ccb_preset_key": "saved_1"
+    }
+  ],
+  "categories": []
+}
+
