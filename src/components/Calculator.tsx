@@ -279,22 +279,31 @@ export default function Calculator() {
                     const key = `${f.alias}:${o.optionText}`;
                     const isChecked = !!checked[key];
                     return (
-                      <label key={key} className="flex items-center gap-2">
-                        <input
-                          type="checkbox"
-                          className="h-4 w-4"
-                          checked={isChecked}
-                          onChange={(e) =>
-                            setChecked((s) => ({
-                              ...s,
-                              [key]: e.target.checked,
-                            }))
-                          }
-                        />
-                        <span className="text-sm">
-                          {o.optionText} — {formatUSD(toNum(o.optionValue))}
-                        </span>
-                      </label>
+                      <div key={key} className="space-y-1">
+                        <label className="flex items-center gap-2">
+                          <input
+                            type="checkbox"
+                            className="h-4 w-4"
+                            checked={isChecked}
+                            onChange={(e) =>
+                              setChecked((s) => ({
+                                ...s,
+                                [key]: e.target.checked,
+                              }))
+                            }
+                          />
+                          <span className="text-sm">
+                            {o.optionText} — {formatUSD(toNum(o.optionValue))}
+                          </span>
+                        </label>
+
+                        {/* HINT under item */}
+                        {o.optionHint && (
+                          <p className="pl-6 text-xs text-neutral-500">
+                            {o.optionHint}
+                          </p>
+                        )}
+                      </div>
                     );
                   })}
                 </div>
